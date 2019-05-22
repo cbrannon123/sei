@@ -27,14 +27,14 @@ function createMovie(req, res) {
 }
 
 function getOneMovie(req, res) {
-    Movie.findById(req.params.id).then(function(movie) {
+    Movie.findById(req.params.id).populate('cast').then(function(movie) {
         res.status(200).json(movie);
     });
     
 }
 
 function getAllMovies (req, res) {
-    Movie.find({}).then(function(movies) {
+    Movie.find({}).populate('cast').then(function(movies) {
         res.status(200).json(movies);
     });
 }
