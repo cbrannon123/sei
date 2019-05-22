@@ -1,6 +1,13 @@
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
+var reviewSchema = new Schema({
+  content: String,
+  rating: {type: Number, min: 1, max: 5, default: 5}
+}, {
+  timestamp: true
+});
+
 var movieSchema = new Schema({
   title: {
     type: String,
@@ -13,7 +20,8 @@ var movieSchema = new Schema({
     }
   }, mpaaRating: String,
   cast: [String],
-  nowShowing: { type: Boolean, default: false }
+  nowShowing: { type: Boolean, default: false },
+  reviews: [reviewSchema]
 }, {
   timestamps: true
 });
