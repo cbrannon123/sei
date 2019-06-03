@@ -14,3 +14,10 @@
   position: relative;
   top: -5px;
 }
+.casey {
+  display: flex;
+  float: left;
+  height: 50px;
+  width: 50px;
+  border-radius: 50%
+}

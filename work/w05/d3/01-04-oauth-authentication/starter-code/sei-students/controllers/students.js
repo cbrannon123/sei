@@ -17,12 +17,15 @@ function index(req, res, next) {
   .sort(sortKey).exec(function(err, students) {
     if (err) return next(err);
     // Passing search values, name & sortKey, for use in the EJS
-    res.render('students/index', { students, name: req.query.name, sortKey });
+    res.render('students/index', { students, name: req.query.name, avatar: req.query.avatar, sortKey, user: req.user });
   });
 }
 
 function addFact(req, res, next) {
-  
+  req.user.facts.push(req.body);
+  req.user.save(function(err) {
+    res.redirect('/students');
+  }); 
 }
 
 function delFact(req, res, next) {
