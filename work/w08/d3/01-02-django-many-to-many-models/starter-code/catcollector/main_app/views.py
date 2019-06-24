@@ -11,7 +11,10 @@ BUCKET = 'catcollec123'
 
 class CatCreate(CreateView):
   model = Cat
+<<<<<<< HEAD
   #fields = '__all__'
+=======
+>>>>>>> 27d5090571ae10a368828f7493d9b0e257ea8b41
   fields = ['name', 'breed', 'description', 'age']
 
 class CatUpdate(UpdateView):
