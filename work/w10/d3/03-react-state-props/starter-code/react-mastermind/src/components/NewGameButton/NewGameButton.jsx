@@ -1,8 +1,8 @@
 import React from 'react';
 
 const NewGameButton = (props) => (
-  <div>
-    NewGameButton
+    <div>
+        NewGameButton
   </div>
 );
 

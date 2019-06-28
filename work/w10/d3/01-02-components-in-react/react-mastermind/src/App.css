@@ -1,0 +1,36 @@
+.App {
+  text-align: center;
+  
+}
+
+.App-header {
+  background-color: #222;
+  height: 50px;
+  padding: 20px;
+  color: white;
+  font-size: 40px;
+  text-align: center;
+  
+}
+
+
+#pegs {
+  display: flex;
+}
+
+#guessRow {
+  display: flex;
+}
+
+.gameContainer {
+  display: flex;
+}
+.GameBoard {
+  display: flex;
+  flex-direction: column;
+}
+
+.userPanel {
+  display: flex;
+  flex-direction: column;
+}

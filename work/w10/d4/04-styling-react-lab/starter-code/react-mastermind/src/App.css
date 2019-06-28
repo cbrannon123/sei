@@ -4,12 +4,45 @@
 }
 
 .App-header {
-  background-color: #222;
+  font-family: 'Roboto Mono', monospace;
+  color: grey;
   height: 50px;
   padding: 10px;
-  color: white;
   font-size: 22px;
   text-align: center;
 }
 
 
+.ColorPicker {
+  flex-direction: column;
+  display: flex;
+  
+}
+
+.GameBoard {
+  display: flex;
+  flex-direction: column-reverse;
+  align-self: flex-end;
+  padding: 20px;
+}
+
+.GameTimer {
+  padding: 20px;
+  font-family: 'Roboto Mono', monospace;
+  font-size: 20px;
+  color :grey;
+
+}
+
+.App-Side {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.App-Footer {
+  font-family: 'Roboto Mono', monospace;
+  text-align: center;
+  padding-top: 20px;
+  color: grey;
+}

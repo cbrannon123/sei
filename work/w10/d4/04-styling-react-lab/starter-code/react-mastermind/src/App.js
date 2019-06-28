@@ -45,13 +45,13 @@ class App extends Component {
     let winTries = this.getWinTries();
     return (
       <div className="App">
-        <header className="App-header">React Mastermind</header>
+        <header className="App-header">REACT MASTERMIND</header>
         <div className="flex-h">
           <GameBoard
             colors={colors}
             guesses={this.state.guesses}
           />
-          <div>
+          <div className="App-Side">
             <ColorPicker
               colors={colors}
               selColorIdx={this.state.selColorIdx}
@@ -60,7 +60,7 @@ class App extends Component {
             <NewGameButton />
           </div>
         </div>
-        <footer>{(winTries ? `You Won in ${winTries} Guesses!` : 'Good Luck!')}</footer>
+        <footer className="App-Footer">{(winTries ? `You Won in ${winTries} Guesses!` : 'Good Luck!')}</footer>
       </div>
     );
   }

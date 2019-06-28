@@ -1,8 +1,8 @@
 import React from 'react';
 
 const GameTimer = (props) => (
-  <div>
-    GameTimer
+	<div>
+		GameTimer
   </div>
 );
 
