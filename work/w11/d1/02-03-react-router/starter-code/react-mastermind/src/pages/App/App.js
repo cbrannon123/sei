@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
 import './App.css';
-import GameBoard from './components/GameBoard/GameBoard';
-import ColorPicker from './components/ColorPicker/ColorPicker';
-import GameTimer from './components/GameTimer/GameTimer';
-import NewGameButton from './components/NewGameButton/NewGameButton';
+import GamePage from '../../pages/GamePage/GamePage';
+import { Route, Switch } from 'react-router-dom';
+import SettingsPage from '../SettingsPage/SettingsPage';
 
 const colors = ['#7CCCE5', '#FDE47F', '#E04644', '#B576AD'];
 
@@ -137,26 +136,23 @@ class App extends Component {
     return (
       <div className="App">
         <header className='App-header-footer'>R E A C T &nbsp;&nbsp;&nbsp;  M A S T E R M I N D</header>
-        <div className="flex-h align-flex-end">
-          <GameBoard
-            colors={colors}
-            guesses={this.state.guesses}
-            handlePegClick={this.handlePegClick}
-            handleScoreClick={this.handleScoreClick}
-          />
-          <div className='App-controls'>
-            <ColorPicker
+        <Switch>
+          <Route exact path='/' render={() =>
+            <GamePage
+              winTries={winTries}
               colors={colors}
               selColorIdx={this.state.selColorIdx}
+              guesses={this.state.guesses}
               handleColorSelection={this.handleColorSelection}
+              handleNewGameClick={this.handleNewGameClick}
+              handlePegClick={this.handlePegClick}
+              handleScoreClick={this.handleScoreClick}
             />
-            <GameTimer />
-            <NewGameButton handleNewGameClick={this.handleNewGameClick}/>
-          </div>
-        </div>
-        <footer className='App-header-footer'>
-          {(winTries ? `You Won in ${winTries} Guesses!` : 'Good Luck!')}
-        </footer>
+          } />
+          <Route exact path='/settings' render={props => 
+            <SettingsPage {...props} />
+          } />
+        </Switch>
       </div>
     );
   }
