@@ -54,7 +54,7 @@ class App extends Component {
   }
 
   handleDifficultyChange = (level) => {
-    this.setState({difficulty: level});
+    this.setState({difficulty: level, ...this.getInitialState()});
   }
 
   handleColorSelection = (colorIdx) => {
@@ -170,7 +170,6 @@ class App extends Component {
               colorsLookup={colors}
               difficulty={this.state.difficulty}
               handleDifficultyChange={this.handleDifficultyChange}
-              handleNewGameClick={this.handleNewGameClick}
             />
           } />
         </Switch>
