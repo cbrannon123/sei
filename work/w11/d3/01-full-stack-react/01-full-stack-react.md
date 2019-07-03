@@ -261,19 +261,21 @@ Now that you've checked out the what the production code will look like when it'
 $ npm start
 ```
 
-#### IMPORTANT REMINDER - Backend Development
-
-Just to be clear, the Express backend is fully configured and ready for additional backend functionality to be coded.
-
-When the time comes, be sure to add folders such as `routes`, `models` & `controllers` to keep your backend code organized.
-
-Additionally, in a SPA, the routes will be API-type routes, i.e., they should be namespaced using `/api` and respond with JSON, not EJS views.
-
 #### Review
 
 **When browsing to `localhost:3001`, what version of the app will you be viewing?**
 
 **What command must we run in Terminal to update the production code?**
+
+### IMPORTANT REMINDER - Backend Development
+
+Just to be clear, the Express backend is fully configured and ready for additional backend functionality to be coded.
+
+When the time comes, be sure to add folders such as `config`, `routes`, `models` & `controllers` to keep your backend code organized.
+
+Additionally, in a SPA, the routes will be API-type routes, i.e., they should be namespaced using `/api` and respond with JSON, not EJS views. Refer to the **Producing an API in Express** lesson in week 5 / day 2 for details.
+
+You will also want to refer to the Mongoose related lessons to refresh your recollection of how to define schemas and perform CRUD using Mongoose models.  Also, consider using async/await when working with Mongoose models this go around.
 
 ## Configure React for Full-stack Development
 
