@@ -10,7 +10,6 @@ const SettingsPage = (props) => {
 
   function handleDifficultyChange(level) {
     props.handleDifficultyChange(level);
-    props.handleNewGameClick();
     props.history.push('/');
   }
 

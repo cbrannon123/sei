@@ -47,9 +47,10 @@ class App extends Component {
   }
 
   handleDifficultyChange = (level) => {
-    this.setState({difficulty: level});
+    // Use callback to ensure level is updated BEFORE calling handleNewGameClick
+    this.setState({difficulty: level}, () => this.handleNewGameClick());
   }
-
+  
   handleColorSelection = (colorIdx) => {
     this.setState({selColorIdx: colorIdx});
   }
@@ -165,7 +166,6 @@ class App extends Component {
               colorsLookup={colors}
               difficulty={this.state.difficulty}
               handleDifficultyChange={this.handleDifficultyChange}
-              handleNewGameClick={this.handleNewGameClick}
             />
           } />
         </Switch>
