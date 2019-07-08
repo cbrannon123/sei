@@ -6,11 +6,7 @@ import { getCurWeatherByLatLng } from '../../services/weather-api';
 
 class App extends Component {
 
-  state = {
-    lat: null,
-    lng: null,
-    temp: null
-  };
+   
 
   async componentDidMount() {
     // Destructure the object returned from getCurrentLatLng()

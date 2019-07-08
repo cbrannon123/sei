@@ -12,6 +12,7 @@ const colors = {
 
 class App extends Component {
   constructor() {
+    console.log('App: constructor')
     super();
     this.state = {...this.getInitialState(), difficulty: 'Easy'};
   }
@@ -20,7 +21,8 @@ class App extends Component {
     return {
       selColorIdx: 0,
       guesses: [this.getNewGuess()],
-      code: this.genCode()
+      code: this.genCode(),
+      elapsedTImer: 0
     };
   }
 
@@ -54,6 +56,13 @@ class App extends Component {
     this.setState({selColorIdx: colorIdx});
   }
 
+  handleTimerUpdate = () => {
+    this.setState(state => ({
+      elapsedTime: ++state.elapsedTime
+
+    }))
+  }
+
   handleNewGameClick = () => {
     this.setState(this.getInitialState());
   }
@@ -80,6 +89,15 @@ class App extends Component {
     this.setState({
         guesses: guessesCopy
     });
+  }
+
+  componentDidMount() {
+    console.log('App: compenenetDidMount')
+  }
+
+
+  componentDidUpdate() {
+    console.log('App: compenenetDidUpdate')
   }
 
   handleScoreClick = () => {
@@ -142,6 +160,7 @@ class App extends Component {
   }
 
   render() {
+    console.log('App: rednder')
     let winTries = this.getWinTries();
     return (
       <div>
@@ -153,10 +172,13 @@ class App extends Component {
               colors={colors[this.state.difficulty]}
               selColorIdx={this.state.selColorIdx}
               guesses={this.state.guesses}
+              elapsedTime={this.state.elapsedTime}
               handleColorSelection={this.handleColorSelection}
               handleNewGameClick={this.handleNewGameClick}
               handlePegClick={this.handlePegClick}
               handleScoreClick={this.handleScoreClick}
+              handleTimerUpdate={this.handleTimerUpdate}
+
             />
           } />
           <Route exact path='/settings' render={props => 
